@@ -40,7 +40,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110" style={{ background: 'var(--gradient-primary)' }}>
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold gradient-text">HyperSpark</span>
@@ -56,9 +56,7 @@ export const Header = () => {
                     "hover-underline transition-colors",
                     location.pathname === item.href
                       ? "text-primary font-semibold"
-                      : isScrolled
-                      ? "text-foreground"
-                      : "text-white hover:text-white/80"
+                      : "text-foreground hover:text-primary"
                   )}
                 >
                   {item.name}
@@ -74,9 +72,9 @@ export const Header = () => {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
+              <X className="w-6 h-6 text-foreground" />
             ) : (
-              <Menu className={cn("w-6 h-6", isScrolled ? "text-foreground" : "text-white")} />
+              <Menu className="w-6 h-6 text-foreground" />
             )}
           </button>
         </div>

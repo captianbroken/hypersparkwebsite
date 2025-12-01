@@ -116,11 +116,11 @@ const Home = () => {
             Empowering homes, gated communities, and businesses with advanced security, automation, and high-speed connectivity solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Link to="/contact">
+            <a href="#services">
               <Button size="lg" className="btn-hero">
                 Explore Our Services
               </Button>
-            </Link>
+            </a>
             <Link to="/contact">
               <Button size="lg" variant="outline" className="btn-hero-outline">
                 Contact Us
@@ -149,7 +149,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-container">
+      <section id="services" className="section-container">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Our Core Services</h2>
           <p className="section-subtitle">
