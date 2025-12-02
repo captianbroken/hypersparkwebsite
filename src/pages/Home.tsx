@@ -112,17 +112,30 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-section relative" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/80 via-[#0A1A3A]/70 to-[#2B6CFF]/20"></div>
-        {/* Animated data pulse overlay */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#00FFCB] to-transparent opacity-40 animate-pulse" style={{ top: '30%', animationDuration: '3s' }}></div>
-          <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-[#6C47FF] to-transparent opacity-50 animate-pulse" style={{ top: '50%', animationDuration: '4s', animationDelay: '1s' }}></div>
-          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#2B6CFF] to-transparent opacity-30 animate-pulse" style={{ top: '70%', animationDuration: '5s', animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/85 via-[#0A1A3A]/75 to-[#2B6CFF]/25"></div>
+        
+        {/* Animated Smart City Grid Effect */}
+        <div className="city-grid-animation">
+          {/* Data pulse lines */}
+          <div className="data-pulse" style={{ top: '25%' }}></div>
+          <div className="data-pulse" style={{ top: '50%' }}></div>
+          <div className="data-pulse" style={{ top: '75%' }}></div>
+          
+          {/* Grid lines */}
+          <div className="grid-line" style={{ top: '20%', animationDelay: '0s' }}></div>
+          <div className="grid-line" style={{ top: '40%', animationDelay: '1s' }}></div>
+          <div className="grid-line" style={{ top: '60%', animationDelay: '2s' }}></div>
+          <div className="grid-line" style={{ top: '80%', animationDelay: '0.5s' }}></div>
+          
+          {/* Scan effect */}
+          <div className="scan-line" style={{ top: '10%', left: '10%' }}></div>
+          <div className="scan-line" style={{ bottom: '15%', right: '15%', animationDirection: 'reverse', animationDelay: '3s' }}></div>
         </div>
-        {/* Glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6C47FF]/15 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00FFCB]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#2B6CFF]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        
+        {/* Animated Glow orbs */}
+        <div className="glow-orb glow-orb-primary" style={{ top: '20%', left: '15%' }}></div>
+        <div className="glow-orb glow-orb-secondary" style={{ bottom: '20%', right: '20%' }}></div>
+        <div className="glow-orb glow-orb-tertiary" style={{ top: '50%', right: '30%' }}></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
             Smart. Secure. Connected.
@@ -181,7 +194,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-container bg-muted">
+      <section className="section-container bg-secondary/5">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Why Choose HyperSpark</h2>
           <p className="section-subtitle">
@@ -213,8 +226,8 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="bg-white rounded-2xl p-12 shadow-md hover:shadow-xl transition-all duration-300 border border-border hover:border-primary flex items-center justify-center h-32 group-hover:scale-105">
-                  <span className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors">
+                <div className="bg-card rounded-2xl p-12 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105">
+                  <span className="text-4xl font-bold gradient-text group-hover:opacity-100 opacity-60 transition-opacity">
                     {client.logo}
                   </span>
                 </div>

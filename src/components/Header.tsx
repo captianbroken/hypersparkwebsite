@@ -30,10 +30,12 @@ export const Header = () => {
 
   // Determine text color based on page and scroll state
   const navTextClass = isHomePage && !isScrolled
-    ? "text-white hover:text-primary-light"
-    : "text-foreground hover:text-primary";
+    ? "text-white hover:text-tertiary"
+    : "text-secondary hover:text-primary";
 
-  const activeNavClass = "text-primary font-semibold";
+  const activeNavClass = isHomePage && !isScrolled 
+    ? "text-tertiary font-semibold" 
+    : "text-primary font-semibold";
 
   return (
     <header
