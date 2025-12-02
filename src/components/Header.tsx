@@ -18,6 +18,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,13 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Determine text color based on page and scroll state
+  const navTextClass = isHomePage && !isScrolled
+    ? "text-white hover:text-primary-light"
+    : "text-foreground hover:text-primary";
+
+  const activeNavClass = "text-primary font-semibold";
 
   return (
     <header
@@ -43,7 +51,10 @@ export const Header = () => {
             <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 pulse-glow" style={{ background: 'var(--gradient-button)' }}>
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold gradient-text">HyperSpark</span>
+            <span className={cn(
+              "text-2xl font-bold transition-colors",
+              isHomePage && !isScrolled ? "text-white" : "gradient-text"
+            )}>HyperSpark</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,8 +66,8 @@ export const Header = () => {
                   className={cn(
                     "hover-underline transition-colors",
                     location.pathname === item.href
-                      ? "text-primary font-semibold"
-                      : "text-foreground hover:text-primary"
+                      ? activeNavClass
+                      : navTextClass
                   )}
                 >
                   {item.name}
@@ -72,9 +83,9 @@ export const Header = () => {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className={cn("w-6 h-6", isHomePage && !isScrolled ? "text-white" : "text-foreground")} />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className={cn("w-6 h-6", isHomePage && !isScrolled ? "text-white" : "text-foreground")} />
             )}
           </button>
         </div>

@@ -49,6 +49,11 @@ const services = [
     title: "Access Control Solutions",
     description: "Biometric, RFID, and smart locking systems for secure entry management and visitor tracking.",
   },
+  {
+    icon: Award,
+    title: "Software Licensing",
+    description: "Authorized & genuine licensing solutions including Microsoft 365, AutoCAD, Antivirus, Server OS, and all enterprise software licenses.",
+  },
 ];
 
 const features = [
@@ -107,12 +112,17 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-section relative" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/70 to-primary/30"></div>
-        {/* Animated overlay */}
-        <div className="absolute inset-0 animated-bg opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/80 via-[#0A1A3A]/70 to-[#2B6CFF]/20"></div>
+        {/* Animated data pulse overlay */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#00FFCB] to-transparent opacity-40 animate-pulse" style={{ top: '30%', animationDuration: '3s' }}></div>
+          <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-[#6C47FF] to-transparent opacity-50 animate-pulse" style={{ top: '50%', animationDuration: '4s', animationDelay: '1s' }}></div>
+          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-[#2B6CFF] to-transparent opacity-30 animate-pulse" style={{ top: '70%', animationDuration: '5s', animationDelay: '2s' }}></div>
+        </div>
         {/* Glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tertiary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6C47FF]/15 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00FFCB]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#2B6CFF]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
             Smart. Secure. Connected.

@@ -9,15 +9,15 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
   return (
-    <Card className="service-card group">
+    <Card className="bg-card border border-border rounded-2xl p-0 transition-all duration-300 hover:border-primary hover:shadow-lg group">
       <CardContent className="p-8">
-        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-          <Icon className="w-8 h-8 text-white" />
+        <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ background: 'var(--gradient-button)' }}>
+          <Icon className="w-7 h-7 text-white" />
         </div>
-        <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed text-sm">
           {description}
         </p>
       </CardContent>
