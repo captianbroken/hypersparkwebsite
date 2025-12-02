@@ -106,8 +106,13 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-section" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 to-secondary/80"></div>
+      <section className="hero-section relative" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/70 to-primary/30"></div>
+        {/* Animated overlay */}
+        <div className="absolute inset-0 animated-bg opacity-50"></div>
+        {/* Glow effects */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tertiary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
             Smart. Secure. Connected.

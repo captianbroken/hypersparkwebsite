@@ -40,7 +40,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110" style={{ background: 'var(--gradient-primary)' }}>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 pulse-glow" style={{ background: 'var(--gradient-button)' }}>
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold gradient-text">HyperSpark</span>
