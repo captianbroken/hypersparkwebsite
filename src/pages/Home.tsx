@@ -11,48 +11,57 @@ import {
   Lock,
   Eye,
   Zap,
-  Clock,
   Users,
   Award,
   HeadphonesIcon,
 } from "lucide-react";
 import heroImage from "@/assets/hero-tech.jpg";
+import logoDsr from "@/assets/logo-dsr.png";
+import logoRev from "@/assets/logo-revolutionare.png";
+import logoVasavi from "@/assets/logo-vasavi.png";
 
 const services = [
   {
     icon: Camera,
     title: "CCTV Surveillance & AMC",
     description: "Advanced security camera systems with 24/7 monitoring, AI analytics, and comprehensive annual maintenance contracts.",
+    href: "/cctv",
   },
   {
     icon: Building2,
     title: "Gated Community Technologies",
     description: "Complete solutions including intercom, access control, boom barriers, and broadband for residential complexes.",
+    href: "/gated-community",
   },
   {
     icon: HomeIcon,
     title: "Home & Office Automation",
     description: "Smart automation systems for lighting, climate control, security, and energy management with voice control.",
+    href: "/home-automation",
   },
   {
     icon: Wifi,
     title: "Internet Services",
     description: "High-speed leased lines, business broadband, and FTTH solutions with dedicated bandwidth and reliable connectivity.",
+    href: "/internet",
   },
   {
     icon: Shield,
     title: "Network Security",
     description: "Enterprise-grade firewalls, VPN solutions, and comprehensive cybersecurity protection for your business.",
+    href: "/network-security",
   },
   {
     icon: Lock,
     title: "Access Control Solutions",
     description: "Biometric, RFID, and smart locking systems for secure entry management and visitor tracking.",
+    href: "/gated-community",
   },
   {
     icon: Award,
     title: "Software Licensing",
     description: "Authorized & genuine licensing solutions including Microsoft 365, AutoCAD, Antivirus, Server OS, and all enterprise software licenses.",
+    href: "/software-licensing",
   },
 ];
 
@@ -93,17 +102,17 @@ const clients = [
   {
     name: "DSR Builders",
     url: "https://dsrbuilders.in/the-first-by-dsr.php",
-    logo: "DSR",
+    logo: logoDsr,
   },
   {
     name: "Revolutionare",
     url: "https://revolutionare.com/",
-    logo: "REV",
+    logo: logoRev,
   },
   {
     name: "The Vasavi Group",
     url: "https://thevasavigroup.com/",
-    logo: "TVG",
+    logo: logoVasavi,
   },
 ];
 
@@ -150,7 +159,7 @@ const Home = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="btn-hero-outline">
+              <Button size="lg" className="btn-hero-secondary">
                 Contact Us
               </Button>
             </Link>
@@ -185,16 +194,21 @@ const Home = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <ServiceCard {...service} />
-              </div>
+              <Link 
+                key={index} 
+                to={service.href}
+                className="animate-fade-in block" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ServiceCard icon={service.icon} title={service.title} description={service.description} />
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-container bg-secondary/5">
+      <section className="section-container bg-gradient-to-br from-secondary/5 to-primary/5">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Why Choose HyperSpark</h2>
           <p className="section-subtitle">
@@ -226,10 +240,12 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="bg-card rounded-2xl p-12 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105">
-                  <span className="text-4xl font-bold gradient-text group-hover:opacity-100 opacity-60 transition-opacity">
-                    {client.logo}
-                  </span>
+                <div className="bg-card rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="max-h-16 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
                 </div>
                 <p className="text-center mt-4 text-sm text-muted-foreground group-hover:text-primary transition-colors">
                   {client.name}
