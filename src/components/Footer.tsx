@@ -8,20 +8,22 @@ const quickLinks = [
   { name: "Home Automation", href: "/home-automation" },
   { name: "Internet", href: "/internet" },
   { name: "Network Security", href: "/network-security" },
+  { name: "Software Licensing", href: "/software-licensing" },
 ];
 
 export const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-secondary text-white">
       <div className="container mx-auto px-4 md:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-white">HyperSpark</span>
+            <div className="flex items-center mb-6">
+              <span className="text-2xl font-bold flex items-baseline">
+                <span className="text-tertiary">Hyper</span>
+                <Zap className="w-5 h-5 text-primary inline-block" style={{ filter: 'drop-shadow(0 0 8px hsl(252 100% 64% / 0.6))' }} />
+                <span className="text-primary">park</span>
+              </span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Empowering homes, gated communities, and businesses with advanced security, automation, and high-speed connectivity solutions.
@@ -66,7 +68,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-white/80 hover:text-primary transition-colors hover-underline"
+                    className="text-white/80 hover:text-tertiary transition-colors hover-underline"
                   >
                     {link.name}
                   </Link>
@@ -85,6 +87,7 @@ export const Footer = () => {
               <li>Network Security</li>
               <li>Access Control Systems</li>
               <li>Gated Community Solutions</li>
+              <li>Software Licensing</li>
             </ul>
           </div>
 
@@ -93,7 +96,7 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-tertiary mt-1 flex-shrink-0" />
                 <span className="text-white/80 text-sm leading-relaxed">
                   1st Floor, Flat No. 101, Rock Homes<br />
                   Road No. 2, Rock Town Colony<br />
@@ -102,14 +105,14 @@ export const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@hyperspark.com" className="text-white/80 hover:text-primary transition-colors">
+                <Mail className="w-5 h-5 text-tertiary flex-shrink-0" />
+                <a href="mailto:info@hyperspark.com" className="text-white/80 hover:text-tertiary transition-colors">
                   info@hyperspark.com
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+911234567890" className="text-white/80 hover:text-primary transition-colors">
+                <Phone className="w-5 h-5 text-tertiary flex-shrink-0" />
+                <a href="tel:+911234567890" className="text-white/80 hover:text-tertiary transition-colors">
                   +91 123 456 7890
                 </a>
               </li>
@@ -123,13 +126,13 @@ export const Footer = () => {
               © {new Date().getFullYear()} HyperSpark. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
                 Sitemap
               </a>
             </div>

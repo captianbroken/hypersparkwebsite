@@ -11,6 +11,7 @@ import CCTV from "./pages/CCTV";
 import HomeAutomation from "./pages/HomeAutomation";
 import Internet from "./pages/Internet";
 import NetworkSecurity from "./pages/NetworkSecurity";
+import SoftwareLicensing from "./pages/SoftwareLicensing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/home-automation" element={<HomeAutomation />} />
               <Route path="/internet" element={<Internet />} />
               <Route path="/network-security" element={<NetworkSecurity />} />
+              <Route path="/software-licensing" element={<SoftwareLicensing />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

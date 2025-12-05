@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -10,8 +16,12 @@ const navigation = [
   { name: "CCTV", href: "/cctv" },
   { name: "Home Automation", href: "/home-automation" },
   { name: "Internet", href: "/internet" },
-  { name: "Network Security", href: "/network-security" },
   { name: "Contact Us", href: "/contact" },
+];
+
+const othersSubmenu = [
+  { name: "Network Security", href: "/network-security" },
+  { name: "Software Licensing", href: "/software-licensing" },
 ];
 
 export const Header = () => {
@@ -28,10 +38,13 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if current page is in Others submenu
+  const isOthersActive = othersSubmenu.some(item => location.pathname === item.href);
+
   // Determine text color based on page and scroll state
   const navTextClass = isHomePage && !isScrolled
     ? "text-white hover:text-tertiary"
-    : "text-secondary hover:text-primary";
+    : "text-foreground hover:text-primary";
 
   const activeNavClass = isHomePage && !isScrolled 
     ? "text-tertiary font-semibold" 
@@ -49,14 +62,17 @@ export const Header = () => {
       <nav className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 pulse-glow" style={{ background: 'var(--gradient-button)' }}>
-              <Zap className="w-6 h-6 text-white" />
-            </div>
+          <Link to="/" className="flex items-center group">
             <span className={cn(
-              "text-2xl font-bold transition-colors",
-              isHomePage && !isScrolled ? "text-white" : "gradient-text"
-            )}>HyperSpark</span>
+              "text-2xl font-bold transition-colors flex items-baseline",
+              isHomePage && !isScrolled ? "text-white" : ""
+            )}>
+              <span className="text-tertiary">Hyper</span>
+              <span className="relative">
+                <Zap className="w-6 h-6 text-primary inline-block -mt-1 pulse-glow" style={{ filter: 'drop-shadow(0 0 8px hsl(252 100% 64% / 0.6))' }} />
+              </span>
+              <span className="text-primary">park</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -76,6 +92,39 @@ export const Header = () => {
                 </Button>
               </Link>
             ))}
+            
+            {/* Others Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    "hover-underline transition-colors flex items-center gap-1",
+                    isOthersActive ? activeNavClass : navTextClass
+                  )}
+                >
+                  Others
+                  <ChevronDown className="w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-background border border-border">
+                {othersSubmenu.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "w-full cursor-pointer",
+                        location.pathname === item.href
+                          ? "text-primary font-semibold"
+                          : "text-foreground hover:text-primary"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -115,6 +164,29 @@ export const Header = () => {
                   </Button>
                 </Link>
               ))}
+              {/* Others submenu items in mobile */}
+              <div className="border-t border-border pt-2 mt-2">
+                <span className="text-sm text-muted-foreground px-4 py-2 block">Others</span>
+                {othersSubmenu.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Button
+                      variant="ghost"
+                      className={cn(
+                        "w-full justify-start pl-8",
+                        location.pathname === item.href
+                          ? "text-primary font-semibold bg-primary/10"
+                          : "text-foreground"
+                      )}
+                    >
+                      {item.name}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}
