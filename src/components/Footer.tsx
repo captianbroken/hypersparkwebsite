@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-white">
       <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
@@ -77,20 +77,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Our Services</h3>
-            <ul className="space-y-3 text-white/80">
-              <li>CCTV Surveillance & AMC</li>
-              <li>Home & Office Automation</li>
-              <li>Internet Services</li>
-              <li>Network Security</li>
-              <li>Access Control Systems</li>
-              <li>Gated Community Solutions</li>
-              <li>Software Licensing</li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Contact Us</h3>
@@ -106,14 +92,14 @@ export const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-tertiary flex-shrink-0" />
-                <a href="mailto:info@hyperspark.com" className="text-white/80 hover:text-tertiary transition-colors">
-                  info@hyperspark.com
+                <a href="mailto:Info@hyperspark.in" className="text-white/80 hover:text-tertiary transition-colors">
+                  Info@hyperspark.in
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-tertiary flex-shrink-0" />
-                <a href="tel:+911234567890" className="text-white/80 hover:text-tertiary transition-colors">
-                  +91 123 456 7890
+                <a href="tel:+919603165929" className="text-white/80 hover:text-tertiary transition-colors">
+                  +91 96031 65929
                 </a>
               </li>
             </ul>

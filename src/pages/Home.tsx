@@ -159,7 +159,7 @@ const Home = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" className="btn-hero-secondary">
+              <Button size="lg" className="btn-hero-outline">
                 Contact Us
               </Button>
             </Link>
