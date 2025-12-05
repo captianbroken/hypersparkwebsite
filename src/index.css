@@ -198,12 +198,12 @@
   }
 
   .btn-hero-outline {
-    @apply bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-xl;
+    @apply bg-transparent border-2 border-tertiary text-tertiary hover:bg-tertiary hover:text-secondary font-semibold px-8 py-6 text-lg rounded-xl;
     transition: var(--transition-smooth);
   }
 
   .btn-hero-outline:hover {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px hsl(190 100% 50% / 0.4);
   }
 
   .btn-hero-secondary {

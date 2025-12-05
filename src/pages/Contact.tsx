@@ -122,11 +122,11 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/20">
+              <div className="bg-gradient-to-br from-primary/5 to-tertiary/5 rounded-2xl p-8 border border-primary/20">
                 <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-tertiary rounded-xl flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -144,31 +144,31 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-tertiary rounded-xl flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
                       <a
-                        href="mailto:info@hyperspark.com"
+                        href="mailto:Info@hyperspark.in"
                         className="text-primary hover:underline"
                       >
-                        info@hyperspark.com
+                        Info@hyperspark.in
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-tertiary rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Phone</h3>
                       <a
-                        href="tel:+911234567890"
+                        href="tel:+919603165929"
                         className="text-primary hover:underline"
                       >
-                        +91 123 456 7890
+                        +91 96031 65929
                       </a>
                     </div>
                   </div>
