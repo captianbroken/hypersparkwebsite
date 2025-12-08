@@ -8,7 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "deploy": "npm run build && rm -rf public_html/* && cp -r dist/* public_html/",
+    "deploy": "npm run build && rm -rf public_html/test/* && cp -r dist/* public_html/test/",
     "preview": "vite preview"
   },
   "dependencies": {
