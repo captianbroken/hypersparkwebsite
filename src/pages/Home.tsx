@@ -127,7 +127,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
-      <section className="hero-section relative overflow-hidden">
+      <section className="hero-section relative overflow-hidden pt-20">
         {/* Video Background */}
         <video
           autoPlay
