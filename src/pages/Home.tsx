@@ -15,7 +15,7 @@ import {
   Award,
   HeadphonesIcon,
 } from "lucide-react";
-import heroImage from "@/assets/hero-tech.jpg";
+
 import logoDsr from "@/assets/logo-dsr.png";
 import logoRev from "@/assets/logo-revolutionare.png";
 import logoVasavi from "@/assets/logo-vasavi.png";
@@ -126,68 +126,22 @@ const clients = [
 const Home = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section
-        className="hero-section relative"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/85 via-[#0A1A3A]/75 to-[#2B6CFF]/25"></div>
+      {/* Hero Section with Video Background */}
+      <section className="hero-section relative overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/70 via-[#0A1A3A]/60 to-[#2B6CFF]/20"></div>
 
-        {/* Animated Smart City Grid Effect */}
-        <div className="city-grid-animation">
-          {/* Data pulse lines */}
-          <div className="data-pulse" style={{ top: "25%" }}></div>
-          <div className="data-pulse" style={{ top: "50%" }}></div>
-          <div className="data-pulse" style={{ top: "75%" }}></div>
-
-          {/* Grid lines */}
-          <div
-            className="grid-line"
-            style={{ top: "20%", animationDelay: "0s" }}
-          ></div>
-          <div
-            className="grid-line"
-            style={{ top: "40%", animationDelay: "1s" }}
-          ></div>
-          <div
-            className="grid-line"
-            style={{ top: "60%", animationDelay: "2s" }}
-          ></div>
-          <div
-            className="grid-line"
-            style={{ top: "80%", animationDelay: "0.5s" }}
-          ></div>
-
-          {/* Scan effect */}
-          <div className="scan-line" style={{ top: "10%", left: "10%" }}></div>
-          <div
-            className="scan-line"
-            style={{
-              bottom: "15%",
-              right: "15%",
-              animationDirection: "reverse",
-              animationDelay: "3s",
-            }}
-          ></div>
-        </div>
-
-        {/* Animated Glow orbs */}
-        <div
-          className="glow-orb glow-orb-primary"
-          style={{ top: "20%", left: "15%" }}
-        ></div>
-        <div
-          className="glow-orb glow-orb-secondary"
-          style={{ bottom: "20%", right: "20%" }}
-        ></div>
-        <div
-          className="glow-orb glow-orb-tertiary"
-          style={{ top: "50%", right: "30%" }}
-        ></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
             Smart. Secure. Connected.
