@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# HyperSpark – Smart Security, Automation & Connectivity Solutions
 
-## Project info
+HyperSpark is a modern technology solutions platform offering CCTV surveillance, gated community infrastructure, home/office automation, high-speed internet services, and enterprise-grade network security.  
+This project is the official HyperSpark website built with **React + TypeScript + Vite**, featuring smooth animations, gradient UI, and responsive layouts.
 
-**URL**: https://lovable.dev/projects/a2b62e99-d43f-4f03-a9fe-28384c112c25
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+### 🔐 Security & Automation
 
-**Use Lovable**
+- CCTV Surveillance & AMC
+- Gated Community Technologies
+- Smart Home & Office Automation
+- Access Control Systems
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a2b62e99-d43f-4f03-a9fe-28384c112c25) and start prompting.
+### 🌐 Connectivity
 
-Changes made via Lovable will be committed automatically to this repo.
+- Business Internet Solutions
+- FTTH for Communities
+- Enterprise Network Security
 
-**Use your preferred IDE**
+### 🧩 Additional Services
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Software Licensing (Microsoft 365, AutoCAD, Antivirus, etc.)
+- Custom Technology Integrations
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tech Stack
+
+- **React 18**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn/ui (Custom UI Components)**
+- **Lucide Icons**
+
+---
+
+## 📁 Project Structure
+
+```
+
+src/
+│── assets/
+│   ├── hero-tech.jpg
+│   ├── logo-dsr.png
+│   ├── logo-revolutionare.png
+│   ├── logo-vasavi.png
+│
+│── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── NavLink.tsx
+│   ├── ScrollToTop.tsx
+│   ├── ServiceCard.tsx
+│   ├── FeatureCard.tsx
+│   └── ui/...
+│
+│── hooks/
+│   ├── use-mobile.tsx
+│   └── use-toast.ts
+│
+│── lib/
+│   └── utils.ts
+│
+│── pages/
+│   ├── Home.tsx
+│   ├── GatedCommunity.tsx
+│   ├── CCTV.tsx
+│   ├── HomeAutomation.tsx
+│   ├── Internet.tsx
+│   ├── NetworkSecurity.tsx
+│   ├── SoftwareLicensing.tsx
+│   ├── Contact.tsx
+│   └── NotFound.tsx
+│
+├── App.tsx
+├── main.tsx
+├── index.css
+└── vite-env.d.ts
+
+```
+
+---
+
+## 🧑‍💻 Local Development Setup
+
+Make sure **Node.js 18+** is installed.
+
+### 1️⃣ Clone the repository
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/sidhu7777/hyperspark-core-tech.git
+cd hyperspark-core-tech
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2️⃣ Install dependencies
 
-# Step 3: Install the necessary dependencies.
-npm i
+```sh
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 3️⃣ Start development server
+
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### 4️⃣ Build for production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+### 5️⃣ Preview production build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm run preview
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🌍 Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project can be deployed on:
 
-## How can I deploy this project?
+- **Vercel (Recommended)**
+- **Netlify**
+- **Cloudflare Pages**
+- **GitHub Pages**
+- **Any static hosting provider**
 
-Simply open [Lovable](https://lovable.dev/projects/a2b62e99-d43f-4f03-a9fe-28384c112c25) and click on Share -> Publish.
+Just upload the **dist/** folder generated after running:
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+npm run build
+```
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Environment Variables
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Create a `.env` file:
+
+```
+VITE_EMAILJS_SERVICE_ID=xxxx
+VITE_EMAILJS_TEMPLATE_ID=xxxx
+VITE_EMAILJS_PUBLIC_KEY=xxxx
+```
+
+---
+
+---
+
+## 👨‍💻 Author
+
+**Vineeth Raja Banala**
+
+---
+
+## 📬 Contact
+
+📧 [info@hyperspark.in](mailto:info@hyperspark.in)
+📍 Hyderabad, Telangana, India
+
+---
+
+```
+
+---
+
+```
