@@ -5,29 +5,29 @@ This project is the official HyperSpark website built with **React + TypeScript 
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🔐 Security & Automation
+### Security & Automation
 
 - CCTV Surveillance & AMC
 - Gated Community Technologies
 - Smart Home & Office Automation
 - Access Control Systems
 
-### 🌐 Connectivity
+### Connectivity
 
 - Business Internet Solutions
 - FTTH for Communities
 - Enterprise Network Security
 
-### 🧩 Additional Services
+### Additional Services
 
 - Software Licensing (Microsoft 365, AutoCAD, Antivirus, etc.)
 - Custom Technology Integrations
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **React 18**
 - **TypeScript**
@@ -38,7 +38,7 @@ This project is the official HyperSpark website built with **React + TypeScript 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 
@@ -85,36 +85,36 @@ src/
 
 ---
 
-## 🧑‍💻 Local Development Setup
+## Local Development Setup
 
 Make sure **Node.js 18+** is installed.
 
-### 1️⃣ Clone the repository
+### Clone the repository
 
 ```sh
 git clone https://github.com/sidhu7777/hyperspark-core-tech.git
 cd hyperspark-core-tech
 ```
 
-### 2️⃣ Install dependencies
+### Install dependencies
 
 ```sh
 npm install
 ```
 
-### 3️⃣ Start development server
+### Start development server
 
 ```sh
 npm run dev
 ```
 
-### 4️⃣ Build for production
+### Build for production
 
 ```sh
 npm run build
 ```
 
-### 5️⃣ Preview production build
+### Preview production build
 
 ```sh
 npm run preview
@@ -122,7 +122,7 @@ npm run preview
 
 ---
 
-## 🌍 Deployment
+## Deployment
 
 This project can be deployed on:
 
@@ -154,7 +154,7 @@ VITE_EMAILJS_PUBLIC_KEY=xxxx
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Vineeth Raja Banala**
 
@@ -166,9 +166,3 @@ VITE_EMAILJS_PUBLIC_KEY=xxxx
 📍 Hyderabad, Telangana, India
 
 ---
-
-```
-
----
-
-```
