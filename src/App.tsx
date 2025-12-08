@@ -14,6 +14,7 @@ import NetworkSecurity from "./pages/NetworkSecurity";
 import SoftwareLicensing from "./pages/SoftwareLicensing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* Scroll up     */}
+        <ScrollToTop />
+
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
@@ -33,7 +37,10 @@ const App = () => (
               <Route path="/home-automation" element={<HomeAutomation />} />
               <Route path="/internet" element={<Internet />} />
               <Route path="/network-security" element={<NetworkSecurity />} />
-              <Route path="/software-licensing" element={<SoftwareLicensing />} />
+              <Route
+                path="/software-licensing"
+                element={<SoftwareLicensing />}
+              />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

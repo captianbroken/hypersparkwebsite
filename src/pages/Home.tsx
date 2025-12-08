@@ -24,43 +24,50 @@ const services = [
   {
     icon: Camera,
     title: "CCTV Surveillance & AMC",
-    description: "Advanced security camera systems with 24/7 monitoring, AI analytics, and comprehensive annual maintenance contracts.",
+    description:
+      "Advanced security camera systems with 24/7 monitoring, AI analytics, and comprehensive annual maintenance contracts.",
     href: "/cctv",
   },
   {
     icon: Building2,
     title: "Gated Community Technologies",
-    description: "Complete solutions including intercom, access control, boom barriers, and broadband for residential complexes.",
+    description:
+      "Complete solutions including intercom, access control, boom barriers, and broadband for residential complexes.",
     href: "/gated-community",
   },
   {
     icon: HomeIcon,
     title: "Home & Office Automation",
-    description: "Smart automation systems for lighting, climate control, security, and energy management with voice control.",
+    description:
+      "Smart automation systems for lighting, climate control, security, and energy management with voice control.",
     href: "/home-automation",
   },
   {
     icon: Wifi,
     title: "Internet Services",
-    description: "High-speed leased lines, business broadband, and FTTH solutions with dedicated bandwidth and reliable connectivity.",
+    description:
+      "High-speed leased lines, business broadband, and FTTH solutions with dedicated bandwidth and reliable connectivity.",
     href: "/internet",
   },
   {
     icon: Shield,
     title: "Network Security",
-    description: "Enterprise-grade firewalls, VPN solutions, and comprehensive cybersecurity protection for your business.",
+    description:
+      "Enterprise-grade firewalls, VPN solutions, and comprehensive cybersecurity protection for your business.",
     href: "/network-security",
   },
   {
     icon: Lock,
     title: "Access Control Solutions",
-    description: "Biometric, RFID, and smart locking systems for secure entry management and visitor tracking.",
+    description:
+      "Biometric, RFID, and smart locking systems for secure entry management and visitor tracking.",
     href: "/gated-community",
   },
   {
     icon: Award,
     title: "Software Licensing",
-    description: "Authorized & genuine licensing solutions including Microsoft 365, AutoCAD, Antivirus, Server OS, and all enterprise software licenses.",
+    description:
+      "Authorized & genuine licensing solutions including Microsoft 365, AutoCAD, Antivirus, Server OS, and all enterprise software licenses.",
     href: "/software-licensing",
   },
 ];
@@ -120,37 +127,74 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-section relative" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section
+        className="hero-section relative"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/85 via-[#0A1A3A]/75 to-[#2B6CFF]/25"></div>
-        
+
         {/* Animated Smart City Grid Effect */}
         <div className="city-grid-animation">
           {/* Data pulse lines */}
-          <div className="data-pulse" style={{ top: '25%' }}></div>
-          <div className="data-pulse" style={{ top: '50%' }}></div>
-          <div className="data-pulse" style={{ top: '75%' }}></div>
-          
+          <div className="data-pulse" style={{ top: "25%" }}></div>
+          <div className="data-pulse" style={{ top: "50%" }}></div>
+          <div className="data-pulse" style={{ top: "75%" }}></div>
+
           {/* Grid lines */}
-          <div className="grid-line" style={{ top: '20%', animationDelay: '0s' }}></div>
-          <div className="grid-line" style={{ top: '40%', animationDelay: '1s' }}></div>
-          <div className="grid-line" style={{ top: '60%', animationDelay: '2s' }}></div>
-          <div className="grid-line" style={{ top: '80%', animationDelay: '0.5s' }}></div>
-          
+          <div
+            className="grid-line"
+            style={{ top: "20%", animationDelay: "0s" }}
+          ></div>
+          <div
+            className="grid-line"
+            style={{ top: "40%", animationDelay: "1s" }}
+          ></div>
+          <div
+            className="grid-line"
+            style={{ top: "60%", animationDelay: "2s" }}
+          ></div>
+          <div
+            className="grid-line"
+            style={{ top: "80%", animationDelay: "0.5s" }}
+          ></div>
+
           {/* Scan effect */}
-          <div className="scan-line" style={{ top: '10%', left: '10%' }}></div>
-          <div className="scan-line" style={{ bottom: '15%', right: '15%', animationDirection: 'reverse', animationDelay: '3s' }}></div>
+          <div className="scan-line" style={{ top: "10%", left: "10%" }}></div>
+          <div
+            className="scan-line"
+            style={{
+              bottom: "15%",
+              right: "15%",
+              animationDirection: "reverse",
+              animationDelay: "3s",
+            }}
+          ></div>
         </div>
-        
+
         {/* Animated Glow orbs */}
-        <div className="glow-orb glow-orb-primary" style={{ top: '20%', left: '15%' }}></div>
-        <div className="glow-orb glow-orb-secondary" style={{ bottom: '20%', right: '20%' }}></div>
-        <div className="glow-orb glow-orb-tertiary" style={{ top: '50%', right: '30%' }}></div>
+        <div
+          className="glow-orb glow-orb-primary"
+          style={{ top: "20%", left: "15%" }}
+        ></div>
+        <div
+          className="glow-orb glow-orb-secondary"
+          style={{ bottom: "20%", right: "20%" }}
+        ></div>
+        <div
+          className="glow-orb glow-orb-tertiary"
+          style={{ top: "50%", right: "30%" }}
+        ></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
             Smart. Secure. Connected.
           </h1>
           <p className="hero-subtitle animate-slide-up">
-            Empowering homes, gated communities, and businesses with advanced security, automation, and high-speed connectivity solutions.
+            Empowering homes, gated communities, and businesses with advanced
+            security, automation, and high-speed connectivity solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <a href="#services">
@@ -159,7 +203,7 @@ const Home = () => {
               </Button>
             </a>
             <Link to="/contact">
-              <Button size="lg" className="btn-hero-outline">
+              <Button size="lg" className="btn-hero">
                 Contact Us
               </Button>
             </Link>
@@ -173,13 +217,25 @@ const Home = () => {
           <h2 className="section-title">About HyperSpark</h2>
           <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              HyperSpark is a next-generation technology solutions company delivering advanced security, automation, and high-performance internet services for communities and enterprises. We specialize in creating intelligent, safe, and seamlessly connected environments using cutting-edge surveillance, smart automation, and enterprise-grade network infrastructure.
+              HyperSpark is a next-generation technology solutions company
+              delivering advanced security, automation, and high-performance
+              internet services for communities and enterprises. We specialize
+              in creating intelligent, safe, and seamlessly connected
+              environments using cutting-edge surveillance, smart automation,
+              and enterprise-grade network infrastructure.
             </p>
             <p>
-              Our team brings together expert engineering, premium-quality hardware, and AI-driven solutions to ensure unmatched reliability and performance. Whether it's gated communities, modern homes, IT parks, warehouses, or small businesses, we provide customized technology ecosystems that enhance comfort, strengthen security, and improve productivity.
+              Our team brings together expert engineering, premium-quality
+              hardware, and AI-driven solutions to ensure unmatched reliability
+              and performance. Whether it's gated communities, modern homes, IT
+              parks, warehouses, or small businesses, we provide customized
+              technology ecosystems that enhance comfort, strengthen security,
+              and improve productivity.
             </p>
             <p className="font-semibold text-foreground">
-              At HyperSpark, we go beyond installations — we design experiences, build intelligent systems, and power the future of smart living and secure environments.
+              At HyperSpark, we go beyond installations — we design experiences,
+              build intelligent systems, and power the future of smart living
+              and secure environments.
             </p>
           </div>
         </div>
@@ -190,17 +246,22 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Our Core Services</h2>
           <p className="section-subtitle">
-            Comprehensive technology solutions tailored to your security, automation, and connectivity needs
+            Comprehensive technology solutions tailored to your security,
+            automation, and connectivity needs
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link 
-                key={index} 
+              <Link
+                key={index}
                 to={service.href}
-                className="animate-fade-in block" 
+                className="animate-fade-in block"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <ServiceCard icon={service.icon} title={service.title} description={service.description} />
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
               </Link>
             ))}
           </div>
@@ -212,11 +273,16 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Why Choose HyperSpark</h2>
           <p className="section-subtitle">
-            Industry-leading technology solutions with unmatched reliability and support
+            Industry-leading technology solutions with unmatched reliability and
+            support
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={index}
+                className="animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <FeatureCard {...feature} />
               </div>
             ))}
@@ -229,7 +295,8 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="section-title">Trusted By Leading Brands</h2>
           <p className="section-subtitle mb-12">
-            Partnering with industry leaders to deliver exceptional technology solutions
+            Partnering with industry leaders to deliver exceptional technology
+            solutions
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {clients.map((client, index) => (
@@ -240,14 +307,18 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="bg-card rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105">
-                  <img 
-                    src={client.logo} 
+                <div
+                  className="bg-gradient-to-br from-[#0A1A3A]/40 via-[#1a237e]/40 to-[#2B6CFF]/40
+  rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300
+  border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105"
+                >
+                  <img
+                    src={client.logo}
                     alt={client.name}
-                    className="max-h-16 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    className="max-h-20 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
-                <p className="text-center mt-4 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                <p className="text-center mt-4 text-sm text-gray-700 group-hover:text-primary transition-colors">
                   {client.name}
                 </p>
               </a>
@@ -263,7 +334,8 @@ const Home = () => {
             Ready to Transform Your Space?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Get in touch with our experts to discuss your security, automation, and connectivity needs.
+            Get in touch with our experts to discuss your security, automation,
+            and connectivity needs.
           </p>
           <Link to="/contact">
             <Button size="lg" className="btn-hero">

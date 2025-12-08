@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -16,14 +17,41 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    setFormData({ name: "", phone: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent!",
+            description:
+              "Thank you for contacting us. We will get back to you soon.",
+          });
+          setFormData({ name: "", phone: "", email: "", message: "" });
+        },
+        (error) => {
+          toast({
+            title: "Error!",
+            description: "Failed to send message. Please try again.",
+          });
+          console.error("EmailJS Error:", error);
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -36,7 +64,8 @@ const Contact = () => {
             Get In Touch
           </h1>
           <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Have questions about our services? We're here to help. Contact us today for a consultation.
+            Have questions about our services? We're here to help. Contact us
+            today for a consultation.
           </p>
         </div>
       </section>
@@ -50,7 +79,10 @@ const Contact = () => {
               <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Full Name *
                   </label>
                   <Input
@@ -66,7 +98,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Phone Number *
                   </label>
                   <Input
@@ -82,7 +117,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Email Address *
                   </label>
                   <Input
@@ -98,7 +136,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Message *
                   </label>
                   <Textarea
@@ -113,7 +154,11 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
                   <Send className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
@@ -132,12 +177,18 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Address</h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        1st Floor, Flat No. 101, Rock Homes<br />
-                        Road No. 2, Rock Town Colony<br />
-                        Near Rock Town Colony L B Nagar,<br />
-                        Goteti Kalyana Vedika<br />
-                        LB Nagar, Hyderabad<br />
-                        Rangareddy District<br />
+                        1st Floor, Flat No. 101, Rock Homes
+                        <br />
+                        Road No. 2, Rock Town Colony
+                        <br />
+                        Near Rock Town Colony L B Nagar,
+                        <br />
+                        Goteti Kalyana Vedika
+                        <br />
+                        LB Nagar, Hyderabad
+                        <br />
+                        Rangareddy District
+                        <br />
                         Telangana - 500068
                       </p>
                     </div>
@@ -181,15 +232,21 @@ const Contact = () => {
                 <div className="space-y-3 text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
-                    <span className="font-semibold text-foreground">9:00 AM - 7:00 PM</span>
+                    <span className="font-semibold text-foreground">
+                      9:00 AM - 7:00 PM
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday</span>
-                    <span className="font-semibold text-foreground">9:00 AM - 5:00 PM</span>
+                    <span className="font-semibold text-foreground">
+                      9:00 AM - 5:00 PM
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>
-                    <span className="font-semibold text-foreground">Closed</span>
+                    <span className="font-semibold text-foreground">
+                      Closed
+                    </span>
                   </div>
                 </div>
               </div>
