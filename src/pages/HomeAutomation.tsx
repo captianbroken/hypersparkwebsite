@@ -118,11 +118,11 @@ const HomeAutomation = () => {
           </div>
 
           {/* AI Features */}
-          <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-3xl p-12 border border-primary/20">
+          <div className="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl p-12 border border-primary/20">
             <h3 className="text-3xl font-bold mb-8 text-center">AI-Powered Intelligence</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1A3A] to-[#2B6CFF] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="font-semibold mb-2">Predictive Automation</h4>
@@ -131,7 +131,7 @@ const HomeAutomation = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1A3A] to-[#2B6CFF] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="font-semibold mb-2">Behavioral Routines</h4>
@@ -140,7 +140,7 @@ const HomeAutomation = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1A3A] to-[#2B6CFF] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <DoorOpen className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="font-semibold mb-2">Smart Notifications</h4>
