@@ -19,6 +19,9 @@ import {
 import logoDsr from "@/assets/logo-dsr.png";
 import logoRev from "@/assets/logo-revolutionare.png";
 import logoVasavi from "@/assets/logo-vasavi.png";
+import logoHomelink from "@/assets/logo-homelink.png";
+import logoInfinityline from "@/assets/logo-infinityline.png";
+import logoListenlights from "@/assets/logo-listenlights.png";
 
 const services = [
   {
@@ -120,6 +123,27 @@ const clients = [
     name: "The Vasavi Group",
     url: "https://thevasavigroup.com/",
     logo: logoVasavi,
+  },
+  {
+    name: "Optus Cloud Communications",
+    url: "https://optuscloudcommunications.com/",
+    logo: null, // Text logo
+    textLogo: "OPTUS",
+  },
+  {
+    name: "Homelink Broadband",
+    url: "https://hlinknet.com/",
+    logo: logoHomelink,
+  },
+  {
+    name: "Infinity Line Solutions",
+    url: "https://infinitylinesolutions.com/",
+    logo: logoInfinityline,
+  },
+  {
+    name: "Listen Lights",
+    url: "https://listenlights.com/",
+    logo: logoListenlights,
   },
 ];
 
@@ -247,12 +271,12 @@ const Home = () => {
       {/* Clients Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Trusted By Leading Brands</h2>
+          <h2 className="section-title pb-2">Trusted By Leading Brands</h2>
           <p className="section-subtitle mb-12">
             Partnering with industry leaders to deliver exceptional technology
             solutions
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {clients.map((client, index) => (
               <a
                 key={index}
@@ -262,17 +286,23 @@ const Home = () => {
                 className="group"
               >
                 <div
-                  className="bg-gradient-to-br from-[#0A1A3A]/40 via-[#1a237e]/40 to-[#2B6CFF]/40
-  rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300
-  border border-primary/20 hover:border-primary flex items-center justify-center h-32 group-hover:scale-105"
+                  className="bg-gradient-to-br from-[#00D4FF]/20 via-[#2B6CFF]/20 to-[#00D4FF]/10
+                    rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300
+                    border border-[#00D4FF]/30 hover:border-[#00D4FF] flex items-center justify-center h-28 group-hover:scale-105"
                 >
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-h-20 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                  {client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-h-16 max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold bg-gradient-to-r from-[#00D4FF] to-[#2B6CFF] bg-clip-text text-transparent">
+                      {(client as any).textLogo}
+                    </span>
+                  )}
                 </div>
-                <p className="text-center mt-4 text-sm text-gray-700 group-hover:text-primary transition-colors">
+                <p className="text-center mt-3 text-sm text-muted-foreground group-hover:text-primary transition-colors">
                   {client.name}
                 </p>
               </a>
