@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link href="./css/bootstrap.min.css" media="all" rel="stylesheet">
+<link href="./css/bootstrap-custom.css" media="all" rel="stylesheet">
+<link href="./css/media.css" media="all" rel="stylesheet">
+<link href="./css/owl.theme.default.min.css" media="all" rel="stylesheet">
+<link href="./css/owl.carousel.min.css" media="all" rel="stylesheet"/>
+<link href="./css/slick.css" media="all" rel="stylesheet"/>
+<link href="./css/animate.min.css" media="all" rel="stylesheet"/>
+<link href="./css/aos.css" media="all" rel="stylesheet"/>  <title>Listenlights | India's Trusted GC Partner</title>
+<meta name="description" content="Listenlights are the leaders in Mechanical, Electrical and Plumbing (MEP) services. We deliver expert MEP solutions across Data Centres, Industrial & Commercial sectors. ">
+
+<meta property="og:title" content="Listenlights | India's Trusted GC Partner">
+<meta property="og:description" content="Listenlights are the leaders in Mechanical, Electrical and Plumbing (MEP) services. We deliver expert MEP solutions across Data Centres, Industrial & Commercial sectors. ">
+<meta property="og:url" content="https://listenlights.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://listenlights.com/banner/Home.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Listenlights | India's Trusted GC Partner">
+<meta name="twitter:description" content="Listenlights are the leaders in Mechanical, Electrical and Plumbing (MEP) services. We deliver expert MEP solutions across Data Centres, Industrial & Commercial sectors.">
+<meta name="twitter:image" content="https://listenlights.com/banner/Home.jpg">
+
+<link rel="canonical" href="https://listenlights.com/">
+</head>
+
+<body class="header-bg">
+  <header class="animated">
+  <div class="main-head">
+    <div class="container">
+      <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="index.php">
+          <img src="images/logo.svg" class="img-fluid whitelogo" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" id="mobile-menu-action" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar one"></span>
+          <span class="icon-bar two"></span>
+          <span class="icon-bar three"></span>
+        </button>
+        <div class="mobile-navbar navbar-mob">
+          <ul class="navbar-nav" id="top-header">
+            <li class="nav-item ">
+              <a class="nav-link" href="coming-soon.php">
+                <img src="images/menu-icon.svg" class="img-fluid" alt="menu-icon">
+                Investors
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="coming-soon.php">
+                <img src="images/menu-icon.svg" class="img-fluid" alt="menu-icon">
+                LL University
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="coming-soon.php">
+                <img src="images/menu-icon.svg" class="img-fluid" alt="menu-icon">
+                LL Infosystems
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="http://dwimitra.listenlights.com/" target="_blank">
+                <img src="images/menu-icon.svg" class="img-fluid" alt="menu-icon">
+                Dwimitra Listenlights
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.php">
+                <img src="images/home.svg" class="img-fluid desktop-block mobile-none" alt="home">
+                <span class="desktop-none mobile-block">Home</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown about-dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="about-menu">About Us</a>
+              <ul class="dropdown-menu" id="about-dropdown" aria-labelledby="fleet-dropdown">
+                <a href="our-company.php" class="dropdown-item f-book">Our Company</a>
+                <a href="soch.php" class="dropdown-item">SOCH</a>
+                <a href="esg.php" class="dropdown-item">ESG</a>
+                <a href="leadership.php" class="dropdown-item f-book">Leadership</a>
+                <a href="key-team-members.php" class="dropdown-item f-book">Key Team Members</a>
+              </ul>
+            </li>
+            <li class="nav-item dropdown product-dropdown">
+              <a class="nav-link dropdown-toggle" id="product-menu">Our Services</a>
+              <ul class="dropdown-menu" id="product-dropdown" aria-labelledby="fleet-dropdown">
+                <a href="data-centers.php" class="dropdown-item f-book">Data Centers</a>
+                <a href="commercial-corporate-services.php" class="dropdown-item f-book">Commercial Corporate Services</a>
+                <a href="industrial-logistics.php" class="dropdown-item f-book">Industrial & Logistics</a>
+                <a href="annual-maintenance-contract.php" class="dropdown-item">Annual Maintenance Contract</a>
+              </ul>
+            </li>
+            <li class="nav-item dropdown career-dropdown">
+              <a href="people-culture.php" class="nav-link dropdown-toggle" data-toggle="dropdown" id="career-menu">People & Culture</a>
+              <ul class="dropdown-menu" id="career-dropdown" aria-labelledby="fleet-dropdown">
+                <a href="people-culture.php" class="dropdown-item f-book mobile-block">Overview</a>
+                <a href="people-culture.php#why-listen-light" class="dropdown-item f-book">Why Listenlights</a>
+                <a href="people-culture.php#life-listen-light" class="dropdown-item f-book">Life at Listenlights</a>
+                <a href="people-culture.php#career" class="dropdown-item f-book">Careers</a>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news-insights.php">News & Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.php">Let's Connect</a>
+            </li>
+            <li class="nav-item d-block d-md-none d-lg-none">
+              <a class="nav-link" href="http://dwimitralistenlights.com/" target="_blank">Dwimitra Listenlights</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VNKQWJGCSR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VNKQWJGCSR');
+</script>  <div id="main-wrapper">
+    <section class="banner-section sec-margin-b">
+      <video class="bannerVideo d-none d-md-block d-lg-block" width="100%" height="100%" autoplay muted loop playsinline>
+        <source src="videos/home_banner.mp4" type="video/mp4">
+      </video>
+      <video class="bannerVideo d-block d-md-none d-lg-none" width="100%" height="100%" autoplay muted loop playsinline>
+        <source src="images/Homescreen-Video-for-mobile_20250730.mp4" type="video/mp4">
+      </video>
+    </section>
+    
+    <section class="sec-margin-b our-comp">
+      <!-- <img src="images/about-section-bg.webp" class="img-fluid desktop-block" alt="About section image">
+        <img src="images/about-section-bg-mobile.webp" class="img-fluid mobile-block" alt="About section image"> -->
+      <img src="images/about_small.jpg" class="img-fluid desktop-block" alt="Driving Organizational Transformation">
+      <img src="images/ourcompany_mobile_img2.png" class="img-fluid mobile-block" alt="Driving Organizational Transformation">
+
+      <div class="container content-mid-sec">
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div class="section-content-box" data-aos="fade-up" data-aos-offset="100">
+              <h2 class="section-title">Our Company</h2>
+              <h1 class="section-subtitle">Working on India's Premier Projects</h1>
+              <p class="text-white">We are an MEP service company that powers various verticals of the industries across the region. With over 4 Decades of experience, our team of experts drive innovation through every executed project.</p>
+              <p class="text-white">Learn more about our corporate philosophy and how we deliver high end services through experience and use of cutting edge technology.</p>
+              <a href="our-company.php" class="common-btn" target="_blank">
+                know more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="sec-margin-b" id="services">
+      <div class="owl-carousel owl-theme services-slider">
+        <div class="item" data-thumb="images/service-icon1.svg" data-title="Data Centers">
+          <img src="images/service1.webp" class="img-fluid desktop-block" alt="DATA CENTERs">
+          <img src="images/data-center-banner-mobile.webp" class="img-fluid mobile-block" alt="DATA CENTERs">
+          <div class="home-services-content" id="data-center-content" data-aos="fade-up" data-aos-offset="100">
+            <h2 class="section-title">DATA CENTERs</h2>
+            <h3 class="section-subtitle">India's Largest Data Center Company in Terms of Projects Completed</h3>
+            <a href="data-centers.php" class="common-btn" target="_blank">
+              view our projects
+              <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+            </a>
+          </div>
+        </div>
+        <div class="item" data-thumb="images/service-icon2.svg" data-title="Commercial Corporate Services">
+          <img src="images/service2-new.webp" class="img-fluid desktop-block" alt="COMMERCIAL CORPORATE SERVICES">
+          <img src="images/service2-mobile-new.webp" class="img-fluid mobile-block" alt="DATA CENTERs">
+          <div class="home-services-content" id="commercial-corporate">
+            <h2 class="section-title">COMMERCIAL CORPORATE SERVICES</h2>
+            <h3 class="section-subtitle">Over 25 Million Sq. Ft. of Tailor-Made Fit-Out Solutions Successfully Delivered</h3>
+            <a href="commercial-corporate-services.php" class="common-btn" target="_blank">
+              view our projects
+              <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+            </a>
+          </div>
+        </div>
+        <div class="item" data-thumb="images/service-icon3.svg" data-title="Industrial & Logistics">
+          <img src="images/service3.webp" class="img-fluid desktop-block" alt="Industrial & Logistics">
+          <img src="images/service3-mobile.webp" class="img-fluid mobile-block" alt="DATA CENTERs">
+          <div class="home-services-content">
+            <h2 class="section-title">INDUSTRIAL & LOGISTICS</h2>
+            <h3 class="section-subtitle">Large-Scale Industrial Projects & Warehouses Delivered with Precision</h3>
+            <a href="industrial-logistics.php" class="common-btn" target="_blank">
+              view our projects
+              <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+            </a>
+          </div>
+        </div>
+        <div class="item" data-thumb="images/service-icon4.svg" data-title="Annual Maintenance Contract">
+          <img src="images/service4.webp" class="img-fluid desktop-block" alt="ANNUAL MAINTENANCE CONTRACT">
+          <img src="images/service4-mobile.webp" class="img-fluid mobile-block" alt="DATA CENTERs">
+          <div class="home-services-content">
+            <h2 class="section-title">ANNUAL MAINTENANCE CONTRACT</h2>
+            <h3 class="section-subtitle">Minimizing Downtime, Maximizing Efficiency</h3>
+            <a href="annual-maintenance-contract.php" class="common-btn" target="_blank">
+              view our projects
+              <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-margin-b" id="news">
+      <div class="owl-carousel owl-theme news-slider">
+        <div class="item">
+          <div class="img-div">
+            <img src="images/homeSlidernew.webp" class="img-fluid desktop-block" alt="Listenlights Growth Through People Processes and Technology">
+            <img src="images/businesspartner_news_mobile_new.webp" class="img-fluid mobile-block" alt="Listenlights Growth through People Processes and Technology">
+          </div>
+          <div class="home-news-content" data-aos="fade-up" data-aos-offset="100">
+            <h2 class="section-title">News & Insights</h2>
+            <h3 class="section-subtitle">Business Partner Celebration 2025</h3>
+            <div class="content-product">
+              <p>May 28, 2025: The Business Partner Celebration 2025 was held to recognize and appreciate the support of our partners who have been integral to Listenlights’ journey.</p>
+              <!-- <p>An industry-first event honoring our partners, the evening featured keynote addresses and milestone showcases, all crafted to celebrate collaboration and shared growth.</p> -->
+              <!-- <p>It brought together years of trust under one roof and marked the beginning of a new annual tradition, reinforcing the value of meaningful, lasting partnerships.</p> -->
+              <a href="news-insights.php#fromHome" target="_blank" class="common-btn">
+                read more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="item">
+          <div class="img-div">
+            <img src="images/news2.webp" class="img-fluid desktop-block" alt="Listenlights Growth Through People Processes and Technology">
+            <img src="images/news2-mobile.webp" class="img-fluid mobile-block" alt="Listenlights Growth through People Processes and Technology">
+          </div>
+          <div class="home-news-content" data-aos="fade-up" data-aos-offset="100">
+            <h2 class="section-title">News & Insights</h2>
+            <h3 class="section-subtitle">Listenlights Growth through People Processes and Technology</h3>
+            <div class="content-product">
+              <p>March 24, 2025: Our CEO shares his insights on how our organization is scaling new heights by focusing on our three Core Pillars: People, Processes, and Technology.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-div">
+            <img src="images/news1.webp" class="img-fluid desktop-block" alt="Driving Organizational Transformation">
+            <img src="images/news1-mobile.webp" class="img-fluid mobile-block" alt="Driving Organizational Transformation">
+          </div>
+          <div class="home-news-content">
+            <h2 class="section-title">News & Insights</h2>
+            <h3 class="section-subtitle">Driving Organizational Transformation</h3>
+            <div class="content-product">
+              <p>January 11, 2025: Discover how Listenlights is driving sustainable growth with innovative technologies, people-focused initiatives and strong ESG goals.</p>
+              <p>Our CEO Himay Shah shares his views in this feature with Outlook Magazine on Sustainable Growth in Engineering & Construction.</p>
+              <a href="https://www.linkedin.com/pulse/our-ceo-himay-shah-shares-his-views-outlook-magazine-sustainable-nzkdf/?trackingId=NPyMenc0BNvMinFHJ11dBw%3D%3D" target="_blank" class="common-btn">
+                read more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="img-div">
+            <img src="images/news3.webp" class="img-fluid desktop-block" alt="India Cleanup Confluence 2024">
+            <img src="images/news3-mobile.webp" class="img-fluid mobile-block" alt="India Cleanup Confluence 2024">
+          </div>
+          <div class="home-news-content">
+            <h2 class="section-title">News & Insights</h2>
+            <h3 class="section-subtitle">India Cleanup <br>Confluence 2024</h3>
+            <div class="content-product">
+              <p>Listenlights participation in the inaugural India Clean Up Confluence 2024 (ICUC) highlights the urgent need to clean our planet, which resonates across age groups and diverse audiences.</p>
+              <p>We were there with a message that included active participation in clean-up activities, support in financial and ...</p>
+            </div>
+            <a href="https://youtu.be/ZHRcFKy5Cmk?si=odT_BavLEVGJWjNx" target="_blank" class="common-btn">watch full video <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-margin-b overflow-hidden" id="soch-section">
+      <img src="images/soch-logo-element.webp" class="img-fluid" alt="SOCH Logo" id="soch-logo-element">
+      <img src="images/soch-bg.webp" class="img-fluid" alt="Soch section image">
+      <div class="container content-mid-sec pulled-left">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="section-content-box" data-aos="fade-up" data-aos-offset="100">
+              <h2 class="section-title">OUR CORPORATE PHILOSOPHY</h2>
+              <h3 class="section-subtitle">SOCH</h3>
+              <p class="text-white w-95">“We exist to make this world a better place by striving to provide growth and peace to everyone by uplifting, supporting, and building the capabilities of people and businesses.</p>
+              <p class="text-white w-95">Our actions should be such that, ultimately the end result of these actions should bring peace and growth or both to whomsoever we interact with.”</p>
+              <a href="soch.php" class="common-btn" target="_blank">
+                know more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
+            <img src="images/soch-logo.webp" class="img-fluid" alt="SOCH Logo" id="soch-logo">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-margin-b" id="clients-section">
+      <img src="images/clients-bg.webp" class="img-fluid clients-bg desktop-block" alt="ESG section image">
+      <img src="images/clients-bg-mobile.webp" class="img-fluid clients-bg mobile-block" alt="ESG section image">
+      <div class="container ">
+        <div class="row content-mid-sec pulled-left pulled-up-30">
+          <div class="col-md-6" data-aos="fade-up" data-aos-offset="100">
+            <div class="section-content-box">
+              <h2 class="section-title">Valued Clients</h2>
+              <h3 class="section-subtitle">Built on Trust</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-0">
+        <div class="marquee-wrapper">
+          <div class="marquee-content">
+            <div class="marquee-item"><img src="images/crisil-logo.webp" alt="Crisil logo"></div>
+            <div class="marquee-item"><img src="images/motilal-oswal.webp" alt="Motilal Oswal logo"></div>
+            <!-- <div class="marquee-item"><img src="images/pdg-logo.webp" alt="PDG logo"></div> -->
+            <div class="marquee-item"><img src="images/sify-logo.webp" alt="Sify logo"></div>
+            <div class="marquee-item"><img src="images/uber-logo.webp" alt="Uber logo"></div>
+            <div class="marquee-item"><img src="images/yotta-logo.webp" alt="Yotta logo"></div>
+            <div class="marquee-item"><img src="images/crisil-logo.webp" alt="Crisil logo"></div>
+            <div class="marquee-item"><img src="images/motilal-oswal.webp" alt="Motilal Oswal logo"></div>
+            <!-- <div class="marquee-item"><img src="images/pdg-logo.webp" alt="PDG logo"></div> -->
+            <div class="marquee-item"><img src="images/sify-logo.webp" alt="Sify logo"></div>
+            <div class="marquee-item"><img src="images/uber-logo.webp" alt="Uber logo"></div>
+            <div class="marquee-item"><img src="images/yotta-logo.webp" alt="Yotta logo"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-margin-b homepeople" id="peopleVideosection">
+      <video id="peopleVideo" width="100%" height="100%" autoplay muted loop playsinline>
+        <!-- <source src="images/people.mp4" type="video/mp4"> -->
+         <source src="images/CAREER-PAGE-FRO-WEBSITE.mp4" type="video/mp4">
+      </video>
+      <div class="container content-mid-sec pulled-up-38">
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div class="section-content-box pt-0" data-aos="fade-up" data-aos-offset="100">
+              <h2 class="section-title">People & Culture</h2>
+              <h3 class="section-subtitle">A People & Process Driven Culture</h3>
+              <p class="text-white">At Listenlights, we are committed to nurturing talent, fostering a culture of innovation and guiding you towards excellence. Listed below are the openings in our various departments.</p>
+              <a href="people-culture.php" class="common-btn" target="_blank">
+                know more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-margin-b" id="esg-section">
+      <img src="images/esg-bg.webp" class="img-fluid desktop-block" alt="ESG section image">
+      <img src="images/esg-section-banner.webp" class="img-fluid mobile-block" alt="ESG section image">
+      <div class="container content-mid-sec pulled-left pulled-up">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="section-content-box" data-aos="fade-up" data-aos-offset="100">
+              <h2 class="section-title">ENVIRONMENT, SOCIAL & GOVERNANCE</h2>
+              <h3 class="section-subtitle">Giving Back to Society</h3>
+              <p class="text-white w-95">At Listenlights, we believe in the power of giving back to society. Through our CSR initiatives, we address social and environmental issues, support local communities, and strive to create a better world.</p>
+              <a href="esg.php" class="common-btn" target="_blank">
+                know more
+                <img src="images/white-right-arrow.svg" class="img-fluid" alt="know more button arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+  <div class="main-footer">
+    <div class="container ">
+      <div class="footer-top text-center" >
+        <h3 class="f-light text-capitalize" data-aos="fade-up" data-aos-offset="100">Let's grow together</h3>
+        <a href="contact-us.php"  target="_blank" class="common-btn white-btn">
+          Let's connect
+          <img src="images/red-right-arrow.svg" class="img-fluid" alt="lets connect button arrow">
+        </a>
+      </div>
+      <div class="footer-wrapp">
+        <div class="column">
+          <div class="d-flex">
+            <h4 class="f-bold footerheading">About Us</h4>
+          </div>
+          <div class="footerlinks">
+            <a href="our-company.php" class="f-light">Our Company</a>
+            <a href="soch.php" class="f-light">SOCH</a>
+            <a href="esg.php" class="f-light">ESG</a>
+            <a href="leadership.php" class="f-light">Leadership</a>
+            <a href="key-team-members.php" class="f-light">Key Team Members</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="d-flex">
+            <h4 class="f-bold footerheading">Our Services</h4>
+          </div>
+          <div class="footerlinks">
+            <a href="data-centers.php" class="f-light">Data Centers</a>
+            <a href="commercial-corporate-services.php" class="f-light" >Commercial Corporate Services</a>
+            <a href="industrial-logistics.php" class="f-light">Industrial & Logistics</a>
+            <a href="annual-maintenance-contract.php" class="f-light">Annual Maintenance Contract</a>
+          </div>
+        </div>
+        <div class="column">
+            <a href="people-culture.php" class="f-bold footerheading">People & Culture</a>
+            <a href="news-insights.php" class="f-bold footerheading">News & Insights</a>
+            <a href="contact-us.php" class="f-bold footerheading">Let's Connect</a>
+            <a href="http://dwimitralistenlights.com/" target="_blank" class="f-bold footerheading">Dwimitra Listenlights</a>
+        </div>
+        <div class="column">
+          <div class="follow-box d-desktop">
+            <h4 class="f-bold footerheading">Follow us on</h4>
+            <div class="follow-wrapper">
+              <a href="https://www.facebook.com/listenlights" target="_blank"><img src="images/facebook.svg" class="img-fluid" alt="facebook"></a>
+              <a href="https://www.linkedin.com/company/7578759/admin/feed/posts/" target="_blank"><img src="images/linked.svg" class="img-fluid" alt="linkedin"></a>
+              <a href="https://www.instagram.com/listenlights/" target="_blank"><img src="images/insta.svg" class="img-fluid" alt="instagram"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="top-arrow">
+      <img src="images/top-arrow.svg" class="img-fluid" alt="top arrow">
+    </a>
+  </div>
+
+  <div class="btm-strip">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <p class="f-light text-center">© 2025 Listenlights  Pvt. Ltd. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</footer>
+
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script> -->
+<script type="text/javascript" src="./js/parallax.min.js"></script>
+<script type="text/javascript" src="./js/custom.js"></script>
+<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="./js/slick.min.js"></script>
+<script type="text/javascript" src="./js/aos.js"></script>
+<script type="text/javascript" src="./js/newfontawsome.js"></script><!-- footer mobile accordion view js -->
+<script type="text/javascript">
+  if (window.screen.width < 780) {
+    $(document).ready(function() {
+      $('.footerheading').click(function() {
+        $('.footerlinks').hide();
+        $('.column').removeClass('active');
+        var $parentColumn = $(this).closest('.column');
+        $parentColumn.addClass('active');
+        $parentColumn.find('.footerlinks').show();
+      });
+    });
+  }
+</script>
+<!-- header nav link dropdown active  -->
+<script type="text/javascript">
+  $(document).ready(function(){
+   if ($(".product-dropdown .dropdown-item").hasClass("active")) {
+    $('#product-menu').css("background","#B80208");
+   }
+   if ($(".about-dropdown .dropdown-item").hasClass("active")) {
+    $('#about-menu').css("background","#B80208");
+   }
+ });
+</script>  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.news-slider').owlCarousel({
+        items: 1,
+        margin: 0,
+        nav: true,
+        navText: [
+          '<span class="news-left-arrow"><img src="images/long-red-left-arrow.svg"></span>',
+          '<span class="news-right-arrow"><img src="images/long-red-right-arrow.svg"></span>'
+        ],
+        dots: true,
+        dotsData: false,
+        loop: true,
+        autoplay: true,
+        smartSpeed: 800,
+        autoplayTimeout: 45000
+      });
+
+      $('.services-slider').owlCarousel({
+        items: 1,
+        margin: 0,
+        nav: true,
+        navText: [
+          '<span class="news-left-arrow"><img src="images/long-red-left-arrow.svg"></span>',
+          '<span class="news-right-arrow"><img src="images/long-red-right-arrow.svg"></span>'
+        ],
+        dots: true,
+        dotsData: true,
+        loop: true,
+        autoplay: true,
+        smartSpeed: 800,
+        autoplayTimeout: 45000
+      });
+
+      $('.services-slider .owl-dot').each(function(index) {
+        var $realSlides = $('.services-slider .owl-item:not(.cloned) .item');
+        var thumb = $realSlides.eq(index).data('thumb');
+        var title = $realSlides.eq(index).data('title');
+        $(this).html('<p class="service-slide-title">' + title + '</p><img src="' + thumb + '">');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
