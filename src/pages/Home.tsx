@@ -134,13 +134,13 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
         
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040517]/70 via-[#0A1A3A]/60 to-[#2B6CFF]/20"></div>
+        {/* Overlay for text readability - matching dark blue theme */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1A3A]/85 via-[#0A1A3A]/75 to-[#1a237e]/60"></div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <h1 className="hero-title animate-fade-in">
