@@ -469,21 +469,21 @@
   }
 
   .marquee-item {
-    width: 248px;
-    height: 96px;
+    width: 260px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 22px;
-    background: hsl(var(--background));
+    padding: 18px 24px;
+    background: hsl(var(220, 30%, 97%));
     border-radius: 16px;
     border: 1px solid hsl(var(--border));
     box-shadow: 0 2px 12px hsl(var(--foreground) / 0.06);
   }
 
   .marquee-logo {
-    max-height: 68px;
-    max-width: 210px;
+    max-height: 88px;
+    max-width: 220px;
     width: auto;
     height: auto;
     object-fit: contain;
