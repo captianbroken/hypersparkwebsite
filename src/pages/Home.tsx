@@ -308,12 +308,9 @@ const Home = () => {
 
       {/* Marquee Wrapper */}
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-marquee-scroll">
+        <div className="marquee-track animate-marquee-scroll">
           {[...clients, ...clients].map((client, index) => (
-            <div
-              key={index}
-              className="marquee-item flex-shrink-0"
-            >
+            <div key={index} className="marquee-item flex-shrink-0">
               <a
                 href={client.url}
                 target="_blank"

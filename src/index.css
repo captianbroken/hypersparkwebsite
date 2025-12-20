@@ -442,10 +442,16 @@
   }
 
   /* Marquee Animation - Seamless Loop */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 32px;
+    will-change: transform;
+  }
+
   .marquee-item {
     width: 220px;
     height: 88px;
-    margin-right: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,7 +470,7 @@
     object-fit: contain;
     filter: none;
     opacity: 1;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease;
   }
 
   .marquee-item:hover .marquee-logo {
@@ -472,7 +478,7 @@
   }
 
   .animate-marquee-scroll {
-    animation: marquee-seamless 18s linear infinite;
+    animation: marquee-seamless 14s linear infinite;
   }
 
   .animate-marquee-scroll:hover {
@@ -481,10 +487,10 @@
 
   @keyframes marquee-seamless {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 
