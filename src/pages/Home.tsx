@@ -299,35 +299,31 @@ const Home = () => {
       
       {/* Clients Section */}
       <section className="section-container overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-      <h2 className="section-title pb-2">Trusted By Leading Brands</h2>
-      <p className="section-subtitle mb-12">
-        Partnering with industry leaders to deliver exceptional technology
-        solutions
-      </p>
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="section-title pb-2">Trusted By Leading Brands</h2>
+          <p className="section-subtitle mb-12 text-muted-foreground">
+            Partnering with industry leaders to deliver exceptional technology
+            solutions
+          </p>
 
-      {/* Marquee Wrapper */}
-      <div className="relative w-full overflow-hidden">
-        <div className="marquee-track animate-marquee-scroll">
-          {[...clients, ...clients].map((client, index) => (
-            <div key={index} className="marquee-item flex-shrink-0">
-              <a
-                href={client.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full h-full"
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="marquee-logo"
-                />
-              </a>
+          {/* Marquee Wrapper */}
+          <div className="relative w-full overflow-hidden marquee-mask">
+            <div className="marquee-track animate-marquee-scroll">
+              {[...clients, ...clients].map((client, index) => (
+                <div key={index} className="marquee-item flex-shrink-0">
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full h-full"
+                  >
+                    <img src={client.logo} alt={client.name} className="marquee-logo" />
+                  </a>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      </div>
       </section>
 
 
