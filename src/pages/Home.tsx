@@ -307,22 +307,26 @@ const Home = () => {
       </p>
 
       {/* Marquee Wrapper */}
-      <div className="relative w-full overflow-hidden w-full ">
-        <div className="marquee-track ">
+      <div className="relative w-full overflow-hidden">
+        <div className="flex animate-marquee-scroll">
           {[...clients, ...clients].map((client, index) => (
-            <a
+            <div
               key={index}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center min-w-[180px]"
+              className="marquee-item flex-shrink-0"
             >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="h-14 object-contain drop-shadow-md"
-              />
-            </a>
+              <a
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="marquee-logo"
+                />
+              </a>
+            </div>
           ))}
         </div>
       </div>
