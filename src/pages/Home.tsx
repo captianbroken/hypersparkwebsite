@@ -16,12 +16,20 @@ import {
   HeadphonesIcon,
 } from "lucide-react";
 
+
 import logoDsr from "@/assets/logo-dsr.png";
 import logoRev from "@/assets/logo-revolutionare.png";
 import logoVasavi from "@/assets/logo-vasavi.png";
 import logoHomelink from "@/assets/logo-homelink.png";
 import logoInfinityline from "@/assets/logo-infinityline.png";
-import logoListenlights from "@/assets/logo-listenlights.png";
+import logoListenlights from "@/assets/logo-listenlights.svg";
+import logoOptus from "@/assets/logo-optus.png";
+import logoEquinix from "@/assets/logo-equinix.svg";
+import logoSanofi from "@/assets/logo-sanofi.svg";
+import logoAdaniConnex from "@/assets/logo-adaniconnex.svg";
+
+import logoDSRInfra from "@/assets/logo-dsrinfra.png";
+
 
 const services = [
   {
@@ -127,8 +135,8 @@ const clients = [
   {
     name: "Optus Cloud Communications",
     url: "https://optuscloudcommunications.com/",
-    logo: null, // Text logo
-    textLogo: "OPTUS",
+    logo: logoOptus,
+    
   },
   {
     name: "Homelink Broadband",
@@ -144,6 +152,26 @@ const clients = [
     name: "Listen Lights",
     url: "https://listenlights.com/",
     logo: logoListenlights,
+  },
+  {
+    name: "DSR Infra – Fortune Prime",
+    url: "https://www.dsrinfra.com/property/fortune-prime/",
+    logo: logoDSRInfra,
+  },
+  {
+    name: "Equinix",
+    url: "https://www.equinix.com/",
+    logo: logoEquinix,
+  },
+  {
+    name: "Sanofi",
+    url: "https://www.sanofi.com/en",
+    logo: logoSanofi,
+  },
+  {
+    name: "Adani Connex",
+    url: "https://www.adaniconnex.com/",
+    logo: logoAdaniConnex,
   },
 ];
 
@@ -268,48 +296,39 @@ const Home = () => {
         </div>
       </section>
 
+      
       {/* Clients Section */}
-      <section className="section-container">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title pb-2">Trusted By Leading Brands</h2>
-          <p className="section-subtitle mb-12">
-            Partnering with industry leaders to deliver exceptional technology
-            solutions
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {clients.map((client, index) => (
-              <a
-                key={index}
-                href={client.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div
-                  className="bg-gradient-to-br from-[#00D4FF]/20 via-[#2B6CFF]/20 to-[#00D4FF]/10
-                    rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300
-                    border border-[#00D4FF]/30 hover:border-[#00D4FF] flex items-center justify-center h-28 group-hover:scale-105"
-                >
-                  {client.logo ? (
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="max-h-16 max-w-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                    />
-                  ) : (
-                    <span className="text-2xl font-bold bg-gradient-to-r from-[#00D4FF] to-[#2B6CFF] bg-clip-text text-transparent">
-                      {(client as any).textLogo}
-                    </span>
-                  )}
-                </div>
-                <p className="text-center mt-3 text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                  {client.name}
-                </p>
-              </a>
-            ))}
-          </div>
+      <section className="section-container overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+      <h2 className="section-title pb-2">Trusted By Leading Brands</h2>
+      <p className="section-subtitle mb-12">
+        Partnering with industry leaders to deliver exceptional technology
+        solutions
+      </p>
+
+      {/* Marquee Wrapper */}
+      <div className="relative w-full overflow-hidden w-full ">
+        <div className="marquee-track ">
+          {[...clients, ...clients].map((client, index) => (
+            <a
+              key={index}
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center min-w-[180px]"
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-14 object-contain drop-shadow-md"
+              />
+            </a>
+          ))}
         </div>
+      </div>
+      </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
