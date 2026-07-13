@@ -1,14 +1,14 @@
-import { WorkerMailer } from "worker-mailer";
-
-// Environment variables configured in the Cloudflare Pages dashboard
-// (Settings -> Environment variables). These are server-side only and are
-// NEVER exposed to the browser. Do NOT prefix them with VITE_.
+// Sends the contact form via the Resend HTTP API (https://resend.com).
+// Cloudflare Workers/Pages can't hold raw SMTP sockets, so we use fetch.
+//
+// Environment variables (Cloudflare Pages -> Settings -> Variables):
+//   RESEND_API_KEY  (Secret)  API key from resend.com
+//   CONTACT_TO      where submissions are delivered (e.g. info@hyperspark.in)
+//   CONTACT_FROM    verified sender, e.g. "HyperSpark <noreply@hyperspark.in>"
 interface Env {
-  SMTP_HOST: string; // e.g. smtp.gmail.com
-  SMTP_PORT: string; // e.g. 465
-  SMTP_USER: string; // e.g. info@hyperspark.in
-  SMTP_PASS: string; // Gmail App Password
-  CONTACT_TO?: string; // where the form is delivered (defaults to SMTP_USER)
+  RESEND_API_KEY: string;
+  CONTACT_TO?: string;
+  CONTACT_FROM?: string;
 }
 
 interface ContactPayload {
@@ -23,6 +23,15 @@ const json = (data: unknown, status = 200) =>
     status,
     headers: { "Content-Type": "application/json" },
   });
+
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
@@ -43,34 +52,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json({ error: "All fields are required." }, 400);
   }
 
-  if (!env.SMTP_HOST || !env.SMTP_USER || !env.SMTP_PASS) {
+  if (!env.RESEND_API_KEY) {
     return json({ error: "Email service is not configured." }, 500);
   }
 
-  // Cloudflare's socket runtime is unreliable with implicit TLS (port 465).
-  // Force STARTTLS on 587, which is the supported path for Gmail on Workers.
-  const port = 587;
+  const to = env.CONTACT_TO || "info@hyperspark.in";
+  const from = env.CONTACT_FROM || "HyperSpark Website <noreply@hyperspark.in>";
 
   try {
-    await WorkerMailer.send(
-      {
-        host: env.SMTP_HOST,
-        port,
-        secure: false,
-        startTls: true,
-        credentials: {
-          username: env.SMTP_USER,
-          password: env.SMTP_PASS,
-        },
-        authType: "login",
-        socketTimeoutMs: 10000,
-        responseTimeoutMs: 10000,
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
       },
-      {
-        // Gmail requires the From address to match the authenticated account.
-        from: { name: "HyperSpark Website", email: env.SMTP_USER },
-        to: { email: env.CONTACT_TO || env.SMTP_USER },
-        reply: { name, email },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        reply_to: email,
         subject: `New enquiry from ${name} — HyperSpark website`,
         text:
           `You received a new contact form submission:\n\n` +
@@ -84,23 +83,19 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` +
           `<p><strong>Email:</strong> ${escapeHtml(email)}</p>` +
           `<p><strong>Message:</strong><br/>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>`,
-      }
-    );
+      }),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text();
+      console.error("Resend error:", res.status, detail);
+      return json({ error: "Failed to send message.", detail }, 502);
+    }
 
     return json({ ok: true });
   } catch (err) {
-    console.error("SMTP send failed:", err);
-    // TEMP DEBUG: expose the real error so we can diagnose the SMTP failure.
+    console.error("Contact send failed:", err);
     const detail = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
     return json({ error: "Failed to send message.", detail }, 502);
   }
 };
-
-function escapeHtml(input: string): string {
-  return input
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
