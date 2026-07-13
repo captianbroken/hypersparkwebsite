@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -19,11 +19,11 @@ export const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold flex items-baseline">
-                <span className="text-tertiary">Hyper</span>
-                <Zap className="w-5 h-5 text-primary inline-block" style={{ filter: 'drop-shadow(0 0 8px hsl(252 100% 64% / 0.6))' }} />
-                <span className="text-primary">park</span>
-              </span>
+              <img
+                src="/logo.png"
+                alt="Hyperspark"
+                className="h-9 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Empowering homes, gated communities, and businesses with advanced security, automation, and high-speed connectivity solutions.
