@@ -87,7 +87,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json({ ok: true });
   } catch (err) {
     console.error("SMTP send failed:", err);
-    return json({ error: "Failed to send message." }, 502);
+    // TEMP DEBUG: expose the real error so we can diagnose the SMTP failure.
+    const detail = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+    return json({ error: "Failed to send message.", detail }, 502);
   }
 };
 
