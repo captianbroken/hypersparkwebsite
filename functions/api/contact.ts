@@ -47,21 +47,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json({ error: "Email service is not configured." }, 500);
   }
 
-  const port = Number(env.SMTP_PORT || "465");
+  // Cloudflare's socket runtime is unreliable with implicit TLS (port 465).
+  // Force STARTTLS on 587, which is the supported path for Gmail on Workers.
+  const port = 587;
 
   try {
     await WorkerMailer.send(
       {
         host: env.SMTP_HOST,
         port,
-        // Port 465 = implicit TLS (Gmail). Port 587 uses STARTTLS instead.
-        secure: port === 465,
-        startTls: port !== 465,
+        secure: false,
+        startTls: true,
         credentials: {
           username: env.SMTP_USER,
           password: env.SMTP_PASS,
         },
         authType: "login",
+        socketTimeoutMs: 10000,
+        responseTimeoutMs: 10000,
       },
       {
         // Gmail requires the From address to match the authenticated account.
