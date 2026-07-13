@@ -1,12 +1,12 @@
-// Sends the contact form via the Resend HTTP API (https://resend.com).
+// Sends the contact form via the Brevo (Sendinblue) HTTP API.
 // Cloudflare Workers/Pages can't hold raw SMTP sockets, so we use fetch.
 //
 // Environment variables (Cloudflare Pages -> Settings -> Variables):
-//   RESEND_API_KEY  (Secret)  API key from resend.com
+//   BREVO_API_KEY  (Secret)  API key from brevo.com (starts with xkeysib-)
 //   CONTACT_TO      where submissions are delivered (e.g. info@hyperspark.in)
-//   CONTACT_FROM    verified sender, e.g. "HyperSpark <noreply@hyperspark.in>"
+//   CONTACT_FROM    verified sender, e.g. "HyperSpark Website <info@hyperspark.in>"
 interface Env {
-  RESEND_API_KEY: string;
+  BREVO_API_KEY: string;
   CONTACT_TO?: string;
   CONTACT_FROM?: string;
 }
@@ -33,6 +33,13 @@ function escapeHtml(input: string): string {
     .replace(/'/g, "&#039;");
 }
 
+// Parse "Name <email@domain>" or a bare "email@domain" into { name, email }.
+function parseSender(input: string): { name: string; email: string } {
+  const match = input.match(/^\s*(.*?)\s*<\s*(.+?)\s*>\s*$/);
+  if (match) return { name: match[1] || "HyperSpark Website", email: match[2] };
+  return { name: "HyperSpark Website", email: input.trim() };
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
@@ -52,32 +59,35 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json({ error: "All fields are required." }, 400);
   }
 
-  if (!env.RESEND_API_KEY) {
+  if (!env.BREVO_API_KEY) {
     return json({ error: "Email service is not configured." }, 500);
   }
 
   const to = env.CONTACT_TO || "info@hyperspark.in";
-  const from = env.CONTACT_FROM || "HyperSpark Website <noreply@hyperspark.in>";
+  const sender = parseSender(
+    env.CONTACT_FROM || "HyperSpark Website <info@hyperspark.in>"
+  );
 
   try {
-    const res = await fetch("https://api.resend.com/emails", {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "api-key": env.BREVO_API_KEY,
         "Content-Type": "application/json",
+        accept: "application/json",
       },
       body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: email,
+        sender,
+        to: [{ email: to }],
+        replyTo: { email, name },
         subject: `New enquiry from ${name} — HyperSpark website`,
-        text:
+        textContent:
           `You received a new contact form submission:\n\n` +
           `Name: ${name}\n` +
           `Phone: ${phone}\n` +
           `Email: ${email}\n\n` +
           `Message:\n${message}\n`,
-        html:
+        htmlContent:
           `<h2>New contact form submission</h2>` +
           `<p><strong>Name:</strong> ${escapeHtml(name)}</p>` +
           `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` +
@@ -88,7 +98,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     if (!res.ok) {
       const detail = await res.text();
-      console.error("Resend error:", res.status, detail);
+      console.error("Brevo error:", res.status, detail);
       return json({ error: "Failed to send message.", detail }, 502);
     }
 
