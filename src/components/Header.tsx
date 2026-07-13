@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -53,16 +53,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <span className={cn(
-              "text-2xl font-bold transition-colors flex items-baseline",
-              isHomePage && !isScrolled ? "text-white" : ""
-            )}>
-              <span className="text-tertiary">Hyper</span>
-              <span className="relative">
-                <Zap className="w-6 h-6 text-primary inline-block -mt-1 pulse-glow" style={{ filter: 'drop-shadow(0 0 8px hsl(252 100% 64% / 0.6))' }} />
-              </span>
-              <span className="text-primary">park</span>
-            </span>
+            <img
+              src="/logo.png"
+              alt="Hyperspark"
+              className="h-9 md:h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
