@@ -1,5 +1,8 @@
 import { Camera, Building, Car } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Seo } from "@/components/Seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -21,15 +24,21 @@ const services = [
 
 const CCTV = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="CCTV Installation in Hyderabad | HyperSpark"
+        description="Professional CCTV camera installation, AMC, ANPR and NVR setup and surveillance systems for homes, apartments, offices and warehouses in Hyderabad."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-foreground mb-6 animate-fade-in">
             CCTV Surveillance Solutions
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Advanced security camera systems with AI-powered analytics, 24/7 monitoring, and comprehensive coverage for complete peace of mind.
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground animate-slide-up">
+            IP cameras, PTZ cameras, NVRs and structured cabling for
+            apartments, villas, gated communities, offices, warehouses and
+            construction sites — with AI-powered analytics and 24/7 monitoring.
           </p>
         </div>
       </section>
@@ -37,10 +46,7 @@ const CCTV = () => {
       {/* Services Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Advanced Surveillance Systems</h2>
-          <p className="section-subtitle">
-            Cutting-edge CCTV solutions designed for residential, commercial, and industrial applications
-          </p>
+          <h2 className="section-title mb-12">Advanced Surveillance Systems</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -118,21 +124,29 @@ const CCTV = () => {
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
               Comprehensive maintenance packages ensuring your surveillance system operates at peak performance year-round
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                <p className="text-sm text-muted-foreground">Technical Support</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">4hrs</div>
-                <p className="text-sm text-muted-foreground">Response Time</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">100%</div>
-                <p className="text-sm text-muted-foreground">Uptime Guarantee</p>
-              </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+              <p className="text-sm text-muted-foreground">Technical Support</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Need CCTV for Your Property?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Get a site visit and a clear installation estimate for your home,
+            office, or community.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="btn-hero">
+              Get CCTV Estimate
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

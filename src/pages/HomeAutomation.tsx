@@ -1,5 +1,8 @@
 import { Fingerprint, Lightbulb, DoorOpen, Brain } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Seo } from "@/components/Seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -26,15 +29,21 @@ const services = [
 
 const HomeAutomation = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="Smart Home Automation in Hyderabad | HyperSpark"
+        description="Smart locks, lighting, climate control, automatic gates and AI-based automation for homes and offices in Hyderabad."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-foreground mb-6 animate-fade-in">
             Smart Home Automation
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Transform your home into an intelligent living space with cutting-edge automation technology. Control, monitor, and optimize every aspect of your environment.
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground animate-slide-up">
+            Smart locks, lighting and climate controllers, motorized gates,
+            and voice assistant integration for villas, apartments and
+            offices in Hyderabad.
           </p>
         </div>
       </section>
@@ -42,10 +51,7 @@ const HomeAutomation = () => {
       {/* Services Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Intelligent Automation Solutions</h2>
-          <p className="section-subtitle">
-            Comprehensive smart home systems designed for comfort, security, and energy efficiency
-          </p>
+          <h2 className="section-title mb-12">Intelligent Automation Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -150,6 +156,24 @@ const HomeAutomation = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Automate Your Space?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Request a site visit and we'll recommend the right automation
+            setup for your home or office.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="btn-hero">
+              Request a Site Visit
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

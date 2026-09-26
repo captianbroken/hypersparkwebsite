@@ -1,5 +1,8 @@
 import { Camera, Phone, Wifi, Fingerprint, Fence } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Seo } from "@/components/Seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -36,17 +39,21 @@ const services = [
 
 const GatedCommunity = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="Gated Community Technology Solutions in Hyderabad | HyperSpark"
+        description="CCTV, intercom, access control, boom barriers and broadband for gated communities and residential complexes in Hyderabad."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-foreground mb-6 animate-fade-in">
             Gated Community Solutions
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Complete technology infrastructure for modern residential
-            communities. From security to connectivity, we provide integrated
-            solutions that enhance safety and convenience.
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground animate-slide-up">
+            Perimeter CCTV, video intercoms, boom barriers with ANPR, lift
+            access control and FTTH broadband for gated communities,
+            apartment complexes and residential townships.
           </p>
         </div>
       </section>
@@ -54,11 +61,7 @@ const GatedCommunity = () => {
       {/* Services Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Comprehensive Community Solutions</h2>
-          <p className="section-subtitle">
-            Integrated technology systems designed specifically for gated
-            communities and residential complexes
-          </p>
+          <h2 className="section-title mb-12">Comprehensive Community Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div
@@ -125,6 +128,24 @@ const GatedCommunity = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Upgrading Your Community's Security?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Request a site visit and we'll assess your community's entry
+            points, common areas, and connectivity needs.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="btn-hero">
+              Request a Site Visit
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,5 +1,8 @@
 import { Shield, Lock, Network } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Seo } from "@/components/Seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -21,15 +24,21 @@ const services = [
 
 const NetworkSecurity = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="Network Security & Firewall Setup in Hyderabad | HyperSpark"
+        description="Firewall, VPN and network access control setup and management for businesses in Hyderabad."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-foreground mb-6 animate-fade-in">
             Network Security Solutions
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Comprehensive cybersecurity infrastructure to protect your business from digital threats. Enterprise-grade security for peace of mind.
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground animate-slide-up">
+            Firewalls, VPNs and access control for offices and businesses
+            that need secure internet, remote staff access, and controlled
+            WiFi usage.
           </p>
         </div>
       </section>
@@ -37,10 +46,7 @@ const NetworkSecurity = () => {
       {/* Services Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Complete Security Infrastructure</h2>
-          <p className="section-subtitle">
-            Multi-layered security solutions designed to protect your network, data, and operations
-          </p>
+          <h2 className="section-title mb-12">Complete Security Infrastructure</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -162,11 +168,7 @@ const NetworkSecurity = () => {
           </div>
 
           {/* Security Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <div className="text-4xl font-bold text-primary mb-2">99.9%</div>
-              <p className="text-sm text-muted-foreground">Threat Prevention</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-2xl mx-auto">
             <div className="bg-card rounded-xl p-6 border border-border">
               <div className="text-4xl font-bold text-primary mb-2">24/7</div>
               <p className="text-sm text-muted-foreground">Monitoring</p>
@@ -175,11 +177,25 @@ const NetworkSecurity = () => {
               <div className="text-4xl font-bold text-primary mb-2">256-bit</div>
               <p className="text-sm text-muted-foreground">Encryption</p>
             </div>
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <div className="text-4xl font-bold text-primary mb-2">ISO</div>
-              <p className="text-sm text-muted-foreground">Certified</p>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Is Your Business Network Secure?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Talk to a network expert about firewalls, VPN access, and WiFi
+            security for your office.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="btn-hero">
+              Talk to a Network Expert
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

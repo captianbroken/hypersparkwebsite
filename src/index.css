@@ -475,7 +475,7 @@
     align-items: center;
     justify-content: center;
     padding: 18px 24px;
-    background: hsl(var(220, 30%, 97%));
+    background: hsl(220 30% 97%);
     border-radius: 16px;
     border: 1px solid hsl(var(--border));
     box-shadow: 0 2px 12px hsl(var(--foreground) / 0.06);

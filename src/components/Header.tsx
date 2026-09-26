@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -12,6 +12,7 @@ const navigation = [
   { name: "Internet", href: "/internet" },
   { name: "Network Security", href: "/network-security" },
   { name: "Software Licensing", href: "/software-licensing" },
+  { name: "Fernocast", href: "/fernocast" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -19,7 +20,6 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,26 +29,38 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Determine text color based on page and scroll state
-  const navTextClass = isHomePage && !isScrolled
-    ? "text-white hover:text-tertiary"
-    : "text-foreground hover:text-primary";
-
-  const activeNavClass = isHomePage && !isScrolled 
-    ? "text-tertiary font-semibold" 
-    : "text-primary font-semibold";
+  const navTextClass = "text-foreground hover:text-primary";
+  const activeNavClass = "text-primary font-semibold";
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur-lg shadow-md"
-          : isHomePage
-            ? "bg-[#0A1A3A]"
-            : "bg-background/95 backdrop-blur-lg"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-lg",
+        isScrolled && "shadow-md"
       )}
     >
+      {/* Top contact bar */}
+      <div className="hidden md:block bg-secondary text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-end gap-6 h-9 text-xs">
+            <a
+              href="mailto:Info@hyperspark.in"
+              className="flex items-center gap-1.5 hover:text-tertiary transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              Info@hyperspark.in
+            </a>
+            <a
+              href="tel:+919603165929"
+              className="flex items-center gap-1.5 font-semibold hover:text-tertiary transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              +91 96031 65929
+            </a>
+          </div>
+        </div>
+      </div>
+
       <nav className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -79,18 +91,29 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className={cn("w-6 h-6", isHomePage && !isScrolled ? "text-white" : "text-foreground")} />
-            ) : (
-              <Menu className={cn("w-6 h-6", isHomePage && !isScrolled ? "text-white" : "text-foreground")} />
-            )}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile tap-to-call */}
+            <a
+              href="tel:+919603165929"
+              aria-label="Call HyperSpark"
+              className="p-2 rounded-lg bg-primary/10 text-primary"
+            >
+              <Phone className="w-5 h-5" />
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

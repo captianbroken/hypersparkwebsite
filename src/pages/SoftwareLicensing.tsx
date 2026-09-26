@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/Seo";
 import {
   Award,
   CheckCircle,
@@ -69,14 +70,18 @@ const benefits = [
 
 const SoftwareLicensing = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="Genuine Software Licensing | HyperSpark"
+        description="Authorized Microsoft 365, AutoCAD, antivirus, server OS and enterprise software licensing with compliance support."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6">
             Software Licensing Solutions
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Authorized and genuine software licensing for enterprises. Get the
             right licenses at the best prices with full compliance support.
           </p>
@@ -91,11 +96,7 @@ const SoftwareLicensing = () => {
       {/* Licenses Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Our Licensing Portfolio</h2>
-          <p className="section-subtitle">
-            Comprehensive software licensing solutions for all your business
-            needs
-          </p>
+          <h2 className="section-title mb-12">Our Licensing Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {licenses.map((license, index) => (
               <div

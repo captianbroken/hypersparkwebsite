@@ -1,5 +1,8 @@
 import { Cable, Building2, Wifi } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
+import { Seo } from "@/components/Seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -21,15 +24,20 @@ const services = [
 
 const Internet = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 md:pt-[7.25rem]">
+      <Seo
+        title="Leased Line & Broadband Internet in Hyderabad | HyperSpark"
+        description="Dedicated leased lines, SME business internet and FTTH broadband with reliable local support for homes and businesses in Hyderabad."
+      />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary to-secondary/90 text-white py-24">
+      <section className="bg-muted/40 border-b border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-foreground mb-6 animate-fade-in">
             High-Speed Internet Solutions
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90 animate-slide-up">
-            Lightning-fast, reliable internet connectivity for homes and businesses. From dedicated leased lines to fiber broadband, we deliver the speed you need.
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground animate-slide-up">
+            Leased line circuits, business broadband and FTTH broadband with
+            WiFi 6 routers for businesses, SMEs and homes across Hyderabad.
           </p>
         </div>
       </section>
@@ -37,10 +45,7 @@ const Internet = () => {
       {/* Services Section */}
       <section className="section-container">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-title">Internet Connectivity Options</h2>
-          <p className="section-subtitle">
-            Tailored internet solutions for residential, commercial, and enterprise needs
-          </p>
+          <h2 className="section-title mb-12">Internet Connectivity Options</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -51,7 +56,10 @@ const Internet = () => {
 
           {/* Comparison Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-card rounded-2xl p-8 border-2 border-primary shadow-lg">
+            <div className="relative bg-card rounded-2xl p-8 border-2 border-primary shadow-lg">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                Most Popular
+              </span>
               <div className="text-center mb-6">
                 <Cable className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Leased Line</h3>
@@ -167,6 +175,24 @@ const Internet = () => {
               Custom bandwidth options available for enterprise requirements
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-container bg-gradient-to-br from-secondary to-secondary/90 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Need Reliable Internet for Your Business?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Talk to a network expert about leased lines, business internet,
+            or broadband for your location.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="btn-hero">
+              Talk to a Network Expert
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

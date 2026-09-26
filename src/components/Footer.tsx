@@ -9,6 +9,7 @@ const quickLinks = [
   { name: "Internet", href: "/internet" },
   { name: "Network Security", href: "/network-security" },
   { name: "Software Licensing", href: "/software-licensing" },
+  { name: "Fernocast", href: "/fernocast" },
 ];
 
 export const Footer = () => {
@@ -51,7 +52,9 @@ export const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/hyperspark_networks?stkn=cHpibXc3dWUyaHlm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
@@ -112,15 +115,12 @@ export const Footer = () => {
               © {new Date().getFullYear()} HyperSpark. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
+              <Link to="/privacy-policy" className="text-white/60 hover:text-tertiary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="text-white/60 hover:text-tertiary transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-white/60 hover:text-tertiary transition-colors">
-                Sitemap
-              </a>
+              </Link>
             </div>
           </div>
         </div>

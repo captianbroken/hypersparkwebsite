@@ -12,9 +12,15 @@ import HomeAutomation from "./pages/HomeAutomation";
 import Internet from "./pages/Internet";
 import NetworkSecurity from "./pages/NetworkSecurity";
 import SoftwareLicensing from "./pages/SoftwareLicensing";
+import Fernocast from "./pages/Fernocast";
+import FernocastPrivacyPolicy from "./pages/FernocastPrivacyPolicy";
+import FernocastTerms from "./pages/FernocastTerms";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -41,11 +47,20 @@ const App = () => (
                 path="/software-licensing"
                 element={<SoftwareLicensing />}
               />
+              <Route path="/fernocast" element={<Fernocast />} />
+              <Route
+                path="/fernocast/privacy-policy"
+                element={<FernocastPrivacyPolicy />}
+              />
+              <Route path="/fernocast/terms" element={<FernocastTerms />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
+          <WhatsAppButton />
         </div>
       </BrowserRouter>
     </TooltipProvider>
