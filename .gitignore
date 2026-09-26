@@ -22,7 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
 
+# Environment variables: never commit real values.
+# Copy .env.example to .env for local development.
+.env
+.env.*
+!.env.example
 
 bun.lockb
